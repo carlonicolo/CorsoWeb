@@ -4,4 +4,4 @@ function greeting(name){
     
 }
 
-document.addEventListener('DOMContentLoaded', greeting("Daniel"));
+//document.addEventListener('DOMContentLoaded', greeting("Daniel"));
