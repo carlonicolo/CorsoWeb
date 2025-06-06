@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <input
+      type="text"
+      id="nuovaAttivita"
+      placeholder="Aggiungi una nuova attività"
+    />
+    <button onclick="aggiungiAttivita()">Aggiungi</button>
+    <ul id="listaAttivita"></ul>
+    <script>
+      function aggiungiAttivita() {
+        let attivita = document.getElementById("nuovaAttivita").value;
+        if (attivita) {
+          let li = document.createElement("li");
+          li.textContent = attivita;
+          let eliminaBtn = document.createElement("button");
+          eliminaBtn.textContent = "Elimina";
+          eliminaBtn.onclick = function () {
+            li.remove();
+          };
+          li.appendChild(eliminaBtn);
+          document.getElementById("listaAttivita").appendChild(li);
+          document.getElementById("nuovaAttivita").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
